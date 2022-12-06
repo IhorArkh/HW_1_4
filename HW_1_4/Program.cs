@@ -22,7 +22,6 @@ namespace HW_1_4
         {
             Console.WriteLine("Enter please n (number of array elements)");
             int n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("n = " + n);
 
             int[] arrayMain = new int[n];
 
@@ -30,6 +29,13 @@ namespace HW_1_4
             for (int i = 0; i < arrayMain.Length; i++)
             {
                 arrayMain[i] = new Random().Next(1, 26);
+            }
+
+            // вывод исходного массива
+            Console.WriteLine("Randomly filled from 1 to 26 array: ");
+            for (int i = 0; i < arrayMain.Length; i++)
+            {
+                Console.Write(arrayMain[i] + " ");
             }
 
             int a = 0; // счетчик количества чет чисел в массиве
@@ -50,6 +56,7 @@ namespace HW_1_4
             int[] arrayChet = new int[a];
             int[] arrayNeChet = new int[b];
 
+
             int z = 0; // переменная для перехода на следующий элемент после записи в чет массив
             int y = 0; // переменная для перехода на следующий элемент после записи в нечет массив
             for (int i = 0; i < arrayMain.Length; i++)
@@ -65,6 +72,21 @@ namespace HW_1_4
                     y++;
                 }
             }
+
+            // вывод массива с чет числами
+            Console.WriteLine("\nArray with even numbers: ");
+            for (int i = 0; i < arrayChet.Length; i++)
+            {
+                Console.Write(arrayChet[i] + " ");
+            }
+
+            // вывод массива с нечет числами
+            Console.WriteLine("\nArray with odd numbers: ");
+            for (int i = 0; i < arrayNeChet.Length; i++)
+            {
+                Console.Write(arrayNeChet[i] + " ");
+            }
+
 
             Console.WriteLine();
         }
