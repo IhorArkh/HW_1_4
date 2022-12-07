@@ -53,8 +53,8 @@ namespace HW_1_4
                 }
             }
 
-            int[] arrayChet = new int[a];
-            int[] arrayNeChet = new int[b];
+            int[] arrayEven = new int[a];
+            int[] arrayOdd = new int[b];
 
 
             int z = 0; // переменная для перехода на следующий элемент после записи в чет массив
@@ -63,30 +63,40 @@ namespace HW_1_4
             {
                 if (arrayMain[i] % 2 == 0)
                 {
-                    arrayChet[z] = arrayMain[i];
+                    arrayEven[z] = arrayMain[i];
                     z++;
                 }
                 else
                 {
-                    arrayNeChet[y] = arrayMain[i];
+                    arrayOdd[y] = arrayMain[i];
                     y++;
                 }
             }
 
             // вывод массива с чет числами
             Console.WriteLine("\nArray with even numbers: ");
-            for (int i = 0; i < arrayChet.Length; i++)
+            for (int i = 0; i < arrayEven.Length; i++)
             {
-                Console.Write(arrayChet[i] + " ");
+                Console.Write(arrayEven[i] + " ");
             }
 
             // вывод массива с нечет числами
             Console.WriteLine("\nArray with odd numbers: ");
-            for (int i = 0; i < arrayNeChet.Length; i++)
+            for (int i = 0; i < arrayOdd.Length; i++)
             {
-                Console.Write(arrayNeChet[i] + " ");
+                Console.Write(arrayOdd[i] + " ");
             }
 
+            List<char> list = new List<char>(); 
+            for (char c = 'a'; c <= 'z'; ++c)
+            {
+                list.Add(c);
+            }
+
+            char[] alphabet = list.ToArray(); // массив с англ алфавитом
+
+            char[] arrayEvenLetters = new char[arrayEven.Length];
+            char[] arrayOddLetters = new char[arrayOdd.Length];
 
             Console.WriteLine();
         }
