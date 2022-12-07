@@ -20,7 +20,7 @@ namespace HW_1_4
         /// </summary>
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter please n (number of array elements)");
+            Console.WriteLine("Enter please number of array elements)");
             int n = Convert.ToInt32(Console.ReadLine());
 
             int[] arrayMain = new int[n];
@@ -32,7 +32,7 @@ namespace HW_1_4
             }
 
             // вывод исходного массива
-            Console.WriteLine("Randomly filled from 1 to 26 array: ");
+            Console.WriteLine("\nRandomly filled from 1 to 26 array: ");
             for (int i = 0; i < arrayMain.Length; i++)
             {
                 Console.Write(arrayMain[i] + " ");
@@ -56,7 +56,6 @@ namespace HW_1_4
             int[] arrayEven = new int[a];
             int[] arrayOdd = new int[b];
 
-
             int z = 0; // переменная для перехода на следующий элемент после записи в чет массив
             int y = 0; // переменная для перехода на следующий элемент после записи в нечет массив
             for (int i = 0; i < arrayMain.Length; i++)
@@ -74,20 +73,20 @@ namespace HW_1_4
             }
 
             // вывод массива с чет числами
-            Console.WriteLine("\nArray with even numbers: ");
+            Console.WriteLine("\n\nArray with even numbers: ");
             for (int i = 0; i < arrayEven.Length; i++)
             {
                 Console.Write(arrayEven[i] + " ");
             }
 
             // вывод массива с нечет числами
-            Console.WriteLine("\nArray with odd numbers: ");
+            Console.WriteLine("\n\nArray with odd numbers: ");
             for (int i = 0; i < arrayOdd.Length; i++)
             {
                 Console.Write(arrayOdd[i] + " ");
             }
 
-            List<char> list = new List<char>(); 
+            List<char> list = new List<char>();
             for (char c = 'a'; c <= 'z'; ++c)
             {
                 list.Add(c);
@@ -97,8 +96,10 @@ namespace HW_1_4
 
             char[] arrayEvenLetters = new char[arrayEven.Length];
             char[] arrayOddLetters = new char[arrayOdd.Length];
+            int counterBigEven = 0; // счетчик больших букв в "четном" массиве
+            int counterBigOdd = 0; // счетчик больших букв в "нечетном" массиве
 
-            // получаем чет массив в котором записаны требуемые буквы 
+            // получаем чет массив в котором записаны требуемые буквы
             for (int i = 0; i < arrayEven.Length; i++)
             {
                 int q = arrayEven[i];
@@ -106,31 +107,35 @@ namespace HW_1_4
                 {
                     case 'a':
                         arrayEvenLetters[i] = 'A';
+                        counterBigEven++;
                         break;
                     case 'e':
                         arrayEvenLetters[i] = 'E';
+                        counterBigEven++;
                         break;
                     case 'i':
                         arrayEvenLetters[i] = 'I';
+                        counterBigEven++;
                         break;
                     case 'd':
                         arrayEvenLetters[i] = 'D';
+                        counterBigEven++;
                         break;
                     case 'h':
                         arrayEvenLetters[i] = 'H';
+                        counterBigEven++;
                         break;
                     case 'j':
                         arrayEvenLetters[i] = 'J';
+                        counterBigEven++;
                         break;
                     default:
                         arrayEvenLetters[i] = alphabet[q];
                         break;
                 }
-
-                // arrayEvenLetters[i] = alphabet[q];
             }
 
-            // получаем нечет массив в котором записаны требуемые буквы 
+            // получаем нечет массив в котором записаны требуемые буквы
             for (int i = 0; i < arrayOdd.Length; i++)
             {
                 int q = arrayOdd[i];
@@ -138,21 +143,27 @@ namespace HW_1_4
                 {
                     case 'a':
                         arrayOddLetters[i] = 'A';
+                        counterBigOdd++;
                         break;
                     case 'e':
                         arrayOddLetters[i] = 'E';
+                        counterBigOdd++;
                         break;
                     case 'i':
                         arrayOddLetters[i] = 'I';
+                        counterBigOdd++;
                         break;
                     case 'd':
                         arrayOddLetters[i] = 'D';
+                        counterBigOdd++;
                         break;
                     case 'h':
                         arrayOddLetters[i] = 'H';
+                        counterBigOdd++;
                         break;
                     case 'j':
                         arrayOddLetters[i] = 'J';
+                        counterBigOdd++;
                         break;
                     default:
                         arrayOddLetters[i] = alphabet[q];
@@ -160,7 +171,39 @@ namespace HW_1_4
                 }
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\n\nArray 1:"); // выводим 1ый массив
+            for (int i = 0; i < arrayEvenLetters.Length; i++)
+            {
+                Console.Write(arrayEvenLetters[i] + " ");
+            }
+
+            Console.WriteLine(); // выводим 2ой массив
+            Console.WriteLine("\nArray 2:");
+            for (int i = 0; i < arrayOddLetters.Length; i++)
+            {
+                Console.Write(arrayOddLetters[i] + " ");
+            }
+
+            Console.WriteLine();// выводим массив в котором больше заглавных букв
+            Console.WriteLine("\nArray that have more big letters:");
+            if (counterBigEven > counterBigOdd)
+            {
+                for (int i = 0; i < arrayEvenLetters.Length; i++)
+                {
+                    Console.Write(arrayEvenLetters[i] + " ");
+                }
+            }
+            else if (counterBigOdd > counterBigEven)
+            {
+                for (int i = 0; i < arrayOddLetters.Length; i++)
+                {
+                    Console.Write(arrayOddLetters[i] + " ");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Number of big letters in both arrays equals!");
+            }
         }
     }
 }
