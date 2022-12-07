@@ -98,6 +98,68 @@ namespace HW_1_4
             char[] arrayEvenLetters = new char[arrayEven.Length];
             char[] arrayOddLetters = new char[arrayOdd.Length];
 
+            // получаем чет массив в котором записаны требуемые буквы 
+            for (int i = 0; i < arrayEven.Length; i++)
+            {
+                int q = arrayEven[i];
+                switch (alphabet[q])
+                {
+                    case 'a':
+                        arrayEvenLetters[i] = 'A';
+                        break;
+                    case 'e':
+                        arrayEvenLetters[i] = 'E';
+                        break;
+                    case 'i':
+                        arrayEvenLetters[i] = 'I';
+                        break;
+                    case 'd':
+                        arrayEvenLetters[i] = 'D';
+                        break;
+                    case 'h':
+                        arrayEvenLetters[i] = 'H';
+                        break;
+                    case 'j':
+                        arrayEvenLetters[i] = 'J';
+                        break;
+                    default:
+                        arrayEvenLetters[i] = alphabet[q];
+                        break;
+                }
+
+                // arrayEvenLetters[i] = alphabet[q];
+            }
+
+            // получаем нечет массив в котором записаны требуемые буквы 
+            for (int i = 0; i < arrayOdd.Length; i++)
+            {
+                int q = arrayOdd[i];
+                switch (alphabet[q])
+                {
+                    case 'a':
+                        arrayOddLetters[i] = 'A';
+                        break;
+                    case 'e':
+                        arrayOddLetters[i] = 'E';
+                        break;
+                    case 'i':
+                        arrayOddLetters[i] = 'I';
+                        break;
+                    case 'd':
+                        arrayOddLetters[i] = 'D';
+                        break;
+                    case 'h':
+                        arrayOddLetters[i] = 'H';
+                        break;
+                    case 'j':
+                        arrayOddLetters[i] = 'J';
+                        break;
+                    default:
+                        arrayOddLetters[i] = alphabet[q];
+                        break;
+                }
+            }
+
             Console.WriteLine();
         }
     }
